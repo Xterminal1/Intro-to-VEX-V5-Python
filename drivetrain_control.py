@@ -39,9 +39,10 @@ def user_control():
         # Arcade controls
         forward = controller_1.axis3.position() # Driving fwd/bwd
         turn = controller_1.axis1.position() # Turning
-        
-        left_drive.spin(FORWARD, forward + turn, VOLT) # Left motors spinning
-        right_drive.spin(FORWARD, forward - turn, VOLT) # Right motors spinning
+        # We multiply by 0.12 to convert controller positions in percent to voltage
+        # 0.12 = 12/100, which is maxVoltage/maxPercentage
+        left_drive.spin(FORWARD, (forward + turn) * 0.12, VOLT) # Voltage is better because of more output power
+        right_drive.spin(FORWARD, (forward - turn) * 0.12, VOLT)
 
         wait(20, MSEC) # The loop resets every 20 milliseconds
 
