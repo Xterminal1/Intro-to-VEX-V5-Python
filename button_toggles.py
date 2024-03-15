@@ -44,7 +44,8 @@ def user_control():
 
         wait(20, MSEC) # The loop resets every 20 milliseconds
 
-is_spinning = False # Toggle boolean, essential for toggles to work
+is_spinning = False # Toggle boolean; important for the toggles to work.
+                    # A boolean is a variable that can store two values - true or false.
 
 # The 'def' keyword means that you are defining a function, one of the most important aspects in coding.
 # A function can perform any action you want; you just have to code it.
